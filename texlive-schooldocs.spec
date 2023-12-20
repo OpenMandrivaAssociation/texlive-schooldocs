@@ -1,6 +1,6 @@
 Name:		texlive-schooldocs
-Version:	61719
-Release:	2
+Version:	68109
+Release:	1
 Summary:	Various layout styles for school documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/schooldocs
