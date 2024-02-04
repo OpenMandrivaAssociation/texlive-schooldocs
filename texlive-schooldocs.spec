@@ -1,5 +1,5 @@
 Name:		texlive-schooldocs
-Version:	69238
+Version:	69659
 Release:	1
 Summary:	Various layout styles for school documents
 Group:		Publishing
