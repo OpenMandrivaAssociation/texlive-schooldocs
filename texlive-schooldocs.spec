@@ -3,7 +3,7 @@ Version:	69659
 Release:	1
 Summary:	Various layout styles for school documents
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/schooldocs
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/schooldocs
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schooldocs.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schooldocs.doc.r%{version}.tar.xz
