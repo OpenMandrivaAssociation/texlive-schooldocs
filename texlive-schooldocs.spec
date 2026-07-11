@@ -1,43 +1,26 @@
-Name:		texlive-schooldocs
-Version:	69659
-Release:	1
+%global tl_name schooldocs
+%global tl_revision 73466
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.6
+Release:	%{tl_revision}.1
 Summary:	Various layout styles for school documents
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/schooldocs
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schooldocs.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schooldocs.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schooldocs.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/schooldocs.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/schooldocs.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/schooldocs.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The purpose of this package is to provide several layout styles
-for school documents. It is useful for exercise sheets, exams,
-course materials. The package sets the page geometry
-(dimensions of text and margins) and the title typesetting; the
-various styles define the header, footer and title formatting.
-Many features are freely configurable.
+The aim of this package is to offer diverse layout styles for school-
+related documents. It serves well in creating exercise sheets, exams,
+course materials. The package sets the page geometry (dimensions of text
+and margins) and the title formatting. Various styles are available
+defining settings for headers, footers or alternative title formatting,
+providing many customizable features.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/schooldocs
-%{_texmfdistdir}/tex/latex/schooldocs
-%doc %{_texmfdistdir}/doc/latex/schooldocs
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
